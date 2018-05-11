@@ -15,3 +15,11 @@ aside {
 #title, #rooms {
   margin-left: 40px;
 }
+
+#room-form {
+  margin-top: 60px;
+}
+
+#room-label, #room-input, #submit-btn {
+  margin-top: 10px;
+}
