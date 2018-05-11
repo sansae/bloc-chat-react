@@ -18,7 +18,6 @@ class RoomList extends Component {
 
   createRoom = (e) => {
     e.preventDefault();
-
     this.roomsRef.push({ name: this.state.name });
   }
 
@@ -37,11 +36,11 @@ class RoomList extends Component {
           }
         </div>
         <div>
-          <form id="room-form">
+          <form onSubmit={(e) => this.createRoom(e)} id="room-form">
             <label id="room-label" htmlFor="create-room">**Create New Room**</label>
             <input id="room-input" type="text" name="create-room" ref="room-input" placeholder="Enter Room Name" value={this.state.name} onChange={(e) => this.handleChange(e)}></input>
+            <button id="submit-btn" type="submit" form="room-form">Submit</button>
           </form>
-          <button onClick={(e) => this.createRoom(e)} id="submit-btn" type="submit" form="room-form">Submit</button>
         </div>
       </section>
     )
