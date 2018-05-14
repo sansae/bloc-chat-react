@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
+import MessageList from './components/MessageList';
 
 var config = {
   apiKey: "AIzaSyAhVm_e7KVUH6GBJvn896D34glVvSJriWc",
@@ -16,10 +17,13 @@ firebase.initializeApp(config);
 class App extends Component {
   render() {
     return (
-      <section>
-        <aside>
+      <section className="section-content">
+        <aside id="left-section-aside">
           <h1 id="title">Bloc Chat</h1>
           <RoomList firebase={firebase}/>
+        </aside>
+        <aside id="right-section-aside">
+          <MessageList firebase={firebase}/>
         </aside>
       </section>
     );

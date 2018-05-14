@@ -1,10 +1,20 @@
+.section-content {
+  display: flex;
+}
 
-aside {
+#left-section-aside {
   background: lightgrey;
   display: flex;
   flex-direction: column;
   order: 1;
-  width: 300px;
+  min-height: 100vh;
+}
+
+#right-section-aside {
+  display: flex;
+  flex-direction: column;
+  order: 2;
+  width: stretch;
   min-height: 100vh;
 }
 
