@@ -25,13 +25,17 @@ class RoomList extends Component {
     this.setState({ name: e.target.value })
   }
 
+  handleClick = (e) => {
+    console.log(e.target.innerHTML);
+  }
+
   render() {
     return(
       <section id="rooms">
         <div>
           {
             this.state.rooms.map((room, index) =>
-              <p key={index}>{room.name}</p>
+              <p onClick={(e) => this.handleClick(e)} key={index}>{room.name}</p>
             )
           }
         </div>
