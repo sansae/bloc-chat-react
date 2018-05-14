@@ -15,15 +15,21 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { activeRoom: "" };
+  }
+
   render() {
     return (
       <section className="section-content">
         <aside id="left-section-aside">
           <h1 id="title">Bloc Chat</h1>
-          <RoomList firebase={firebase}/>
+          <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
         </aside>
         <aside id="right-section-aside">
-          <MessageList firebase={firebase}/>
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
         </aside>
       </section>
     );

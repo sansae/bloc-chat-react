@@ -33,3 +33,14 @@
 #room-label, #room-input, #submit-btn {
   margin-top: 10px;
 }
+
+#rooms > div > p {
+  display: table;
+}
+
+#rooms > div > p:hover {
+  display: table;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
