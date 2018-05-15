@@ -11,8 +11,9 @@ class MessageList extends Component {
   render() {
     return (
       <section>
-        <div>
-          <h1>Message List goes here.</h1>
+        <div className="messages">
+          <p>Click on a room from the list on the left.</p>
+          <h1>{this.props.activeRoom}</h1>
         </div>
       </section>
     )

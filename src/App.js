@@ -21,12 +21,20 @@ class App extends Component {
     this.state = { activeRoom: "" };
   }
 
+  selectRoom(room) {
+    // console.log("selectRoom() executed from App.js");
+    // console.log(room.target.innerHTML);
+
+    this.setState({ activeRoom: room.target.innerHTML });
+    console.log(this.state.activeRoom);
+  }
+
   render() {
     return (
       <section className="section-content">
         <aside id="left-section-aside">
           <h1 id="title">Bloc Chat</h1>
-          <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
+          <RoomList firebase={firebase} activeRoom={this.state.activeRoom} handleClick={(e) => this.selectRoom(e)}/>
         </aside>
         <aside id="right-section-aside">
           <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
