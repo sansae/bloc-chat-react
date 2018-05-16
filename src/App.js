@@ -3,6 +3,7 @@ import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
+import User from './components/User';
 
 var config = {
   apiKey: "AIzaSyAhVm_e7KVUH6GBJvn896D34glVvSJriWc",
@@ -31,6 +32,7 @@ class App extends Component {
         <aside id="left-section-aside">
           <h1 id="title">Bloc Chat</h1>
           <RoomList firebase={firebase} activeRoom={this.state.activeRoom} handleClick={(e) => this.selectRoom(e)}/>
+          <User firebase={firebase}/>
         </aside>
         <aside id="right-section-aside">
           <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>

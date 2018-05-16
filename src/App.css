@@ -22,11 +22,11 @@
   margin-top: 60px;
   font-size: 40px;
 }
-#title, #rooms {
+#title, #rooms, #btn-div {
   margin-left: 40px;
 }
 
-#room-form {
+#room-form, #btn-div {
   margin-top: 60px;
 }
 
@@ -38,7 +38,7 @@
   text-decoration: underline;
 }
 
-#rooms > div > p {
+#rooms > div > p, #btn-div {
   display: table;
 }
 
@@ -61,4 +61,8 @@
 
 span {
   font-size: 5px;
+}
+
+#user-btn {
+  width: 70px;
 }
