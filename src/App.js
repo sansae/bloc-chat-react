@@ -22,9 +22,6 @@ class App extends Component {
   }
 
   selectRoom(room) {
-    // console.log("selectRoom() executed from App.js");
-    // console.log(room.target.innerHTML);
-
     this.setState({ activeRoom: room.target.innerHTML });
     console.log(this.state.activeRoom);
   }
