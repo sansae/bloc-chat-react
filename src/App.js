@@ -23,7 +23,6 @@ class App extends Component {
 
   selectRoom(room) {
     this.setState({ activeRoom: room.target.innerHTML });
-    console.log(this.state.activeRoom);
   }
 
   render() {

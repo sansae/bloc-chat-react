@@ -28,6 +28,7 @@ class RoomList extends Component {
   render() {
     return(
       <section id="rooms">
+        <p>Select A Room</p>
         <div>
           {
             this.state.rooms.map((room, index) =>

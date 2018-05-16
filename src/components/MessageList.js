@@ -19,15 +19,18 @@ class MessageList extends Component {
   render() {
     return (
       <section>
-        <div className="messages">
-          <p>Click on a room from the list on the left.</p>
+        <div className="room-title">
           <h1>{this.props.activeRoom}</h1>
         </div>
-        <div>
+        <div id="messages">
           {
-            this.state.messages.map(
+            this.props.activeRoom ? this.state.messages.map(
               (message, index) =>
-              <p key={index}>{message.content}</p>)
+              <div key={index}>
+                <p>{message.roomId}</p>
+                <p>{message.content}</p>
+              </div>
+            ) : ""
           }
         </div>
       </section>
