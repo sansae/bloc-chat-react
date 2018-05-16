@@ -50,6 +50,15 @@
 }
 
 .room-title > h1 {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-top: 80px;
+}
+
+.room-title > h1, #messages {
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-left: 25px;
+}
+
+span {
+  font-size: 5px;
 }

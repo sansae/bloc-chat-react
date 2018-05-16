@@ -27,8 +27,18 @@ class MessageList extends Component {
             this.props.activeRoom ? this.state.messages.map(
               (message, index) =>
               <div key={index}>
-                <p>{message.roomId}</p>
-                <p>{message.content}</p>
+                {
+                  this.props.activeRoom.includes(message.roomId) ?
+                  <div>
+                    <p>
+                      <span>Username: {message.username}</span>
+                      <br></br>
+                      <span>Sent At: {message.sentAt}</span>
+                      <br></br>
+                      Message: {message.content}
+                    </p>
+                  </div> : ""
+                }
               </div>
             ) : ""
           }
