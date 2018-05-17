@@ -41,7 +41,7 @@ class App extends Component {
           <User firebase={firebase} setUser={(user) => this.setUser(user)} username={this.state.username}/>
         </aside>
         <aside id="right-section-aside">
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.username}/>
         </aside>
       </section>
     );
