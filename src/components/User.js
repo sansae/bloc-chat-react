@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
 class User extends Component {
+  componentDidMount() {
+    this.props.firebase.auth().onAuthStateChanged(user => {
+      this.props.setUser(user)
+    })
+  }
 
   signInWithPopup = (e) => {
     e.preventDefault();
@@ -11,9 +16,9 @@ class User extends Component {
   }
 
   signOut = (e) => {
-    console.log('signOut executed');
     this.props.firebase.auth().signOut().then(function() {
-      console.log('Signed Out');
+      console.log('Sign-out Successful!');
+      window.location.reload();
     }, function(error) {
       console.error('Sign Out Error', error);
     });
@@ -21,8 +26,11 @@ class User extends Component {
 
   render() {
     return (
-      <div id="btn-div">
+      <div id="user">
+        <p id="user-status">{this.props.username ? `${this.props.username} Is Logged In` : `Currently Logged In As Guest`}</p>
+
         <button id="sign-in" type="button" onClick={(e) => this.signInWithPopup(e)}>Sign In</button>
+
         <button id="sign-out" type="button" onClick={(e) => this.signOut(e)}>Sign Out</button>
       </div>
     )

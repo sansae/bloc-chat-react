@@ -22,11 +22,11 @@
   margin-top: 60px;
   font-size: 40px;
 }
-#title, #rooms, #btn-div {
+#title, #rooms, #btn-div, #user {
   margin-left: 40px;
 }
 
-#room-form, #btn-div {
+#room-form, #btn-div, #user {
   margin-top: 60px;
 }
 
@@ -38,7 +38,7 @@
   text-decoration: underline;
 }
 
-#rooms > div > p, #btn-div {
+#rooms > div > p, #btn-div, #user {
   display: table;
 }
 
@@ -65,4 +65,9 @@ span {
 
 #sign-in {
   width: 70px;
+}
+
+#user-status {
+  font-style: italic;
+  font-size: 12px;
 }

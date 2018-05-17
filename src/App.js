@@ -19,7 +19,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeRoom: "" };
+    this.state = { activeRoom: "", username: "" };
+  }
+
+  setUser = (user) => {
+    if (user !== null) {
+      this.setState({username: user.displayName});
+    }
   }
 
   selectRoom(room) {
@@ -32,7 +38,7 @@ class App extends Component {
         <aside id="left-section-aside">
           <h1 id="title">Bloc Chat</h1>
           <RoomList firebase={firebase} activeRoom={this.state.activeRoom} handleClick={(e) => this.selectRoom(e)}/>
-          <User firebase={firebase}/>
+          <User firebase={firebase} setUser={(user) => this.setUser(user)} username={this.state.username}/>
         </aside>
         <aside id="right-section-aside">
           <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
