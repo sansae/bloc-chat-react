@@ -16,11 +16,33 @@ class MessageList extends Component {
     })
   }
 
+  getTime() {
+    var d = new Date();
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    var amPm = hour >= 12 ? "PM" : "AM";
+    if (hour === 0) {
+      hour = 12;
+    } else if (hour > 12) {
+      hour = hour % 12;
+    }
+    return `${hour}:${minute} ${amPm}`;
+  }
+
   sendMessage = (e) => {
     e.preventDefault();
-    console.log('sendMessage executed');
     console.log(this.state.message);
-    // this.messagesRef.push({ username: this.props.username });
+    console.log(this.props.username);
+    console.log(this.props.activeRoom);
+    console.log(this.getTime());
+    // this.messagesRef.push(
+    //   {
+    //     username: this.props.username,
+    //     content: this.state.message,
+    //     sentAt: "current time here",
+    //     roomId: this.props.activeRoom
+    //   }
+    // );
   }
 
   handleChange = (e) => {
