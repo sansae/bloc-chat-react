@@ -47,16 +47,18 @@ class MessageList extends Component {
   sendMessage = (e) => {
     e.preventDefault();
 
+    var user = this.props.user ? this.props.user : "Guest";
+
     this.messagesRef.push(
       {
-        username: this.props.user,
+        username: user,
         content: this.state.message,
         sentAt: `${this.getDate()} -- ${this.getTime()}`,
         roomId: this.props.activeRoom
       }
     );
 
-    document.getElementById('message-input').value = "";
+    this.setState({ message: "" });
   }
 
   handleChange = (e) => {
