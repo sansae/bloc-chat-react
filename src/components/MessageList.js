@@ -16,10 +16,24 @@ class MessageList extends Component {
     })
   }
 
+  getDate() {
+    var currentDate = new Date();
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    var dayOfWeek = days[currentDate.getDay()];
+    var month = months[currentDate.getMonth()];
+    var dayOfMonth = currentDate.getDate();
+    var year = currentDate.getFullYear();
+
+    return dayOfWeek + ", " + month + " " + dayOfMonth + ", " + year;
+  }
+
+
   getTime() {
-    var d = new Date();
-    var hour = d.getHours();
-    var minute = d.getMinutes();
+    var time = new Date();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
     minute = minute < 10 ? "0" + minute : minute;
     var amPm = hour >= 12 ? "PM" : "AM";
     if (hour === 0) {
@@ -37,7 +51,7 @@ class MessageList extends Component {
       {
         username: this.props.user,
         content: this.state.message,
-        sentAt: this.getTime(),
+        sentAt: `${this.getDate()} -- ${this.getTime()}`,
         roomId: this.props.activeRoom
       }
     );
