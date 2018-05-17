@@ -32,18 +32,17 @@ class MessageList extends Component {
 
   sendMessage = (e) => {
     e.preventDefault();
-    console.log(this.state.message);
-    console.log(this.props.user);
-    console.log(this.props.activeRoom);
-    console.log(this.getTime());
-    // this.messagesRef.push(
-    //   {
-    //     username: this.props.username,
-    //     content: this.state.message,
-    //     sentAt: this.getTime(),
-    //     roomId: this.props.activeRoom
-    //   }
-    // );
+
+    this.messagesRef.push(
+      {
+        username: this.props.user,
+        content: this.state.message,
+        sentAt: this.getTime(),
+        roomId: this.props.activeRoom
+      }
+    );
+
+    document.getElementById('message-input').value = "";
   }
 
   handleChange = (e) => {
