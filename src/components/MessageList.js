@@ -20,6 +20,7 @@ class MessageList extends Component {
     var d = new Date();
     var hour = d.getHours();
     var minute = d.getMinutes();
+    minute = minute < 10 ? "0" + minute : minute;
     var amPm = hour >= 12 ? "PM" : "AM";
     if (hour === 0) {
       hour = 12;
@@ -32,14 +33,14 @@ class MessageList extends Component {
   sendMessage = (e) => {
     e.preventDefault();
     console.log(this.state.message);
-    console.log(this.props.username);
+    console.log(this.props.user);
     console.log(this.props.activeRoom);
     console.log(this.getTime());
     // this.messagesRef.push(
     //   {
     //     username: this.props.username,
     //     content: this.state.message,
-    //     sentAt: "current time here",
+    //     sentAt: this.getTime(),
     //     roomId: this.props.activeRoom
     //   }
     // );
