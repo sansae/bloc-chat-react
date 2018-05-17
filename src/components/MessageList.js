@@ -49,14 +49,18 @@ class MessageList extends Component {
 
     var user = this.props.user ? this.props.user : "Guest";
 
-    this.messagesRef.push(
-      {
-        username: user,
-        content: this.state.message,
-        sentAt: `${this.getDate()} -- ${this.getTime()}`,
-        roomId: this.props.activeRoom
-      }
-    );
+    if (this.props.activeRoom) {
+      this.messagesRef.push(
+        {
+          username: user,
+          content: this.state.message,
+          sentAt: `${this.getDate()} -- ${this.getTime()}`,
+          roomId: this.props.activeRoom
+        }
+      );
+    } else {
+      alert('Please Select A Room First Before Attempting To Send A Message');
+    }
 
     this.setState({ message: "" });
   }
@@ -92,7 +96,7 @@ class MessageList extends Component {
             ) : ""
           }
         </div>
-        <div>
+        <div id="new-message">
           <input id="message-input" type="text" placeholder="Write your message here..." value={this.state.message} onChange={(e) => this.handleChange(e)}></input>
           <button type="submit" onClick={(e) => this.sendMessage(e)}>Send</button>
         </div>
