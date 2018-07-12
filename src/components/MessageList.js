@@ -50,6 +50,11 @@ class MessageList extends Component {
     var user = this.props.user ? this.props.user : "Guest";
 
     if (this.props.activeRoom) {
+      if (this.state.message === "") {
+        alert("Empty messages are not allowed. If you don't have anything to say, go away ;)")
+        return;
+      }
+
       this.messagesRef.push(
         {
           username: user,
