@@ -18,6 +18,12 @@ class RoomList extends Component {
 
   createRoom = (e) => {
     e.preventDefault();
+
+    if (this.state.name === "") {
+      alert("The name of the room cannot be empty. Please enter a room name");
+      return;
+    }
+    
     this.roomsRef.push({ name: this.state.name });
   }
 
