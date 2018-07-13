@@ -23,7 +23,7 @@ class RoomList extends Component {
       alert("The name of the room cannot be empty. Please enter a room name");
       return;
     }
-    
+
     this.roomsRef.push({ name: this.state.name });
   }
 
@@ -31,17 +31,24 @@ class RoomList extends Component {
     this.setState({ name: e.target.value })
   }
 
+  handleClick = (e, room) => {
+    e.preventDefault();
+    console.log(room);
+  }
+
   render() {
     return(
       <section id="rooms">
         <p>Select A Room</p>
-        <div>
-          {
-            this.state.rooms.map((room, index) =>
-              <p onClick={(e) => this.props.handleClick(e)} key={index}>{room.name}</p>
-            )
-          }
-        </div>
+        {
+          this.state.rooms.map((room, index) =>
+            <div key={index}>
+              <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
+              <button onClick={(e) => this.handleClick(e, room)}>x</button>
+            </div>
+          )
+        }
+
         <div>
           <form onSubmit={(e) => this.createRoom(e)} id="room-form">
             <label id="room-label" htmlFor="create-room">**Create New Room**</label>
