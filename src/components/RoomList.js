@@ -14,12 +14,6 @@ class RoomList extends Component {
       room.key = snapshot.key;
       this.setState({rooms: this.state.rooms.concat(room)});
     })
-
-
-    // this.roomsRef.on('child_removed', snapshot => {
-    //   var deletedNode = snapshot.val();
-    //   console.log(`The deleted node was ${JSON.stringify(deletedNode)}`);
-    // })
   }
 
   createRoom = (e) => {
@@ -43,7 +37,6 @@ class RoomList extends Component {
 
     this.state.rooms.splice(index, 1);
     this.setState({rooms: this.state.rooms})
-    console.log(this.state.rooms);
   }
 
   render() {
