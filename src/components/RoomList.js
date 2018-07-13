@@ -12,7 +12,7 @@ class RoomList extends Component {
     this.roomsRef.on('child_added', snapshot => {
       const room = snapshot.val();
       room.key = snapshot.key;
-      this.setState({rooms: this.state.rooms.concat(room)});
+      this.setState({ rooms: this.state.rooms.concat(room) });
     })
   }
 
@@ -25,10 +25,11 @@ class RoomList extends Component {
     }
 
     this.roomsRef.push({ name: this.state.name });
+    this.setState({ name: "" });
   }
 
   handleChange = (e) => {
-    this.setState({ name: e.target.value })
+    this.setState({ name: e.target.value });
   }
 
   deleteRoom = (e, room, index) => {
@@ -36,7 +37,7 @@ class RoomList extends Component {
     this.roomsRef.child(room.key).remove();
 
     this.state.rooms.splice(index, 1);
-    this.setState({rooms: this.state.rooms})
+    this.setState({ rooms: this.state.rooms });
   }
 
   render() {
@@ -45,9 +46,9 @@ class RoomList extends Component {
         <p>Select A Room</p>
         {
           this.state.rooms.map((room, index) =>
-            <div key={index}>
+            <div className="rooms" key={index}>
               <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
-              <button onClick={(e) => this.deleteRoom(e, room, index)}>x</button>
+              <button onClick={(e) => this.deleteRoom(e, room, index)}>delete room</button>
             </div>
           )
         }

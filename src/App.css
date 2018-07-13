@@ -8,6 +8,7 @@
   flex-direction: column;
   order: 1;
   min-height: 100vh;
+  padding-right: 35px;
 }
 
 #right-section-aside {
@@ -42,11 +43,10 @@
   display: table;
 }
 
-#rooms > div > p:hover {
+#rooms > div > p:hover, .rooms button:hover {
   display: table;
   cursor: pointer;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .room-title > h1 {
@@ -81,4 +81,19 @@ span {
 #new-message > input {
   width: 100%;
   height: 30px;
+}
+
+.rooms {
+  display: flex;
+  align-items: center;
+}
+
+.rooms button {
+  background: transparent;
+  margin-left: auto;
+  display: none;
+}
+
+.rooms:hover button {
+  display: block;
 }
