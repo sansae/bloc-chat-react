@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class RoomList extends Component {
   constructor(props) {
@@ -40,6 +42,27 @@ class RoomList extends Component {
     this.setState({ rooms: this.state.rooms });
   }
 
+  submit = (e, room, index) => {
+    confirmAlert({
+      title: "Confirm to Submit",
+      message: `Are you sure you want to delete ${room.name}?`,
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            this.deleteRoom(e, room, index);
+          }
+        },
+        {
+          label: "No",
+          onClick: () => {
+            return false;
+          }
+        }
+      ]
+    })
+  }
+
   render() {
     return(
       <section id="rooms">
@@ -48,7 +71,7 @@ class RoomList extends Component {
           this.state.rooms.map((room, index) =>
             <div className="rooms" key={index}>
               <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
-              <button onClick={(e) => this.deleteRoom(e, room, index)}>delete room</button>
+              <button onClick={(e) => this.submit(e, room, index)}>delete room</button>
             </div>
           )
         }
@@ -60,6 +83,8 @@ class RoomList extends Component {
             <button id="submit-btn" type="submit" form="room-form">Submit</button>
           </form>
         </div>
+
+        <button onClick={(e) => this.submit(e)}>Confirm Dialog</button>
       </section>
     )
   }
