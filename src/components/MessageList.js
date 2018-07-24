@@ -74,6 +74,14 @@ class MessageList extends Component {
     this.setState({ message: e.target.value });
   }
 
+  deleteMessage = (e, message, index) => {
+    e.preventDefault();
+    this.messagesRef.child(message.key).remove();
+
+    this.state.messages.splice(index, 1);
+    this.setState({ messages: this.state.messages });
+  }
+
   render() {
     return (
       <section>
@@ -97,7 +105,7 @@ class MessageList extends Component {
                       <br></br>
                       <span id="message">{message.content}</span>
                       <br></br>
-                      <span id="delete" onClick={(e) => console.log(`index: ${index}`)}>delete msg</span>
+                      <span id="delete" onClick={(e) => this.deleteMessage(e, message, index)}>delete msg</span>
                     </p>
                     <hr id="line"></hr>
                   </div> : ""
