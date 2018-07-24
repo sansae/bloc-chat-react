@@ -97,3 +97,16 @@ span {
 .rooms:hover button {
   display: block;
 }
+
+#delete {
+  font-style: italic;
+  float: right;
+}
+
+#delete:hover {
+  cursor: pointer;
+}
+
+#message {
+  margin-bottom: 40px;
+}
