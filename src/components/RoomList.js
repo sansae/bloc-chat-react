@@ -83,8 +83,6 @@ class RoomList extends Component {
             <button id="submit-btn" type="submit" form="room-form">Submit</button>
           </form>
         </div>
-
-        <button onClick={(e) => this.submit(e)}>Confirm Dialog</button>
       </section>
     )
   }

@@ -65,6 +65,7 @@ span {
 
 #sign-in {
   width: 70px;
+  margin-right: 5px;
 }
 
 #user-status {
@@ -114,4 +115,8 @@ span {
 
 #line {
   margin-top: 35px;
+}
+
+button:hover, submit-btn:hover {
+  cursor: pointer;
 }
