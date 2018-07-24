@@ -138,8 +138,15 @@ class MessageList extends Component {
           }
         </div>
         <div id="new-message">
-          <input id="message-input" type="text" placeholder="Write your message here..." value={this.state.message} onChange={(e) => this.handleChange(e)}></input>
-          <button type="submit" onClick={(e) => this.sendMessage(e)}>Send</button>
+          {
+            this.props.activeRoom ?
+            (
+              <div>
+                <input id="message-input" type="text" placeholder="Write your message here..." value={this.state.message} onChange={(e) => this.handleChange(e)}></input>
+                <button type="submit" onClick={(e) => this.sendMessage(e)}>Send</button>
+              </div>
+            ) : ""
+          }
         </div>
       </section>
     )
