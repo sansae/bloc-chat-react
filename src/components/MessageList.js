@@ -119,17 +119,22 @@ class MessageList extends Component {
                 {
                   this.props.activeRoom.includes(message.roomId) ?
                   <div id="message-container">
-                    <p>
-                      <span>Username: {message.username}</span>
-                      <br></br>
-                      <span>Sent At: {message.sentAt}</span>
-                      <br></br>
-                      <span>Message:</span>
-                      <br></br>
-                      <span id="message">{message.content}</span>
-                      <br></br>
-                      <span id="delete" onClick={(e) => this.submit(e, message, index)}>Delete Message</span>
-                    </p>
+                    <div>
+                      <div id="metadata">
+                        {message.username}
+                        <br></br>
+                        {message.sentAt}
+                      </div>
+                      <div id="message-body">
+                        <span>Message:</span>
+                        <br></br>
+                        <span>{message.content}</span>
+                        <br></br>
+                        <div>
+                          <span id="delete" onClick={(e) => this.submit(e, message, index)}>Delete Message</span>
+                        </div>
+                      </div>
+                    </div>
                     <hr id="line"></hr>
                   </div> : ""
                 }
