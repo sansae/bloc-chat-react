@@ -99,10 +99,15 @@ span {
   display: block;
 }
 
+#message {
+  font-weight: bold;
+  font-size: 17px;
+}
+
 #delete {
   font-style: italic;
   float: right;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 #delete:hover {

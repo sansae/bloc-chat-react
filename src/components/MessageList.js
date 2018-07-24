@@ -93,10 +93,11 @@ class MessageList extends Component {
                       <br></br>
                       <span>Sent At: {message.sentAt}</span>
                       <br></br>
-                      <div id="message">
-                      Message: <br></br>{message.content}
-                      </div>
-                      <span id="delete">delete msg</span>
+                      <span>Message:</span>
+                      <br></br>
+                      <span id="message">{message.content}</span>
+                      <br></br>
+                      <span id="delete" onClick={(e) => console.log(`index: ${index}`)}>delete msg</span>
                     </p>
                     <hr id="line"></hr>
                   </div> : ""
