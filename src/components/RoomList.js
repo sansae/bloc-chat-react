@@ -68,7 +68,11 @@ class RoomList extends Component {
       <section id="rooms">
         <p>Select A Room</p>
         {
-          this.state.rooms.map((room, index) =>
+          this.state.rooms.sort((a, b) => {
+            var roomA = a.name.toUpperCase();
+            var roomB = b.name.toUpperCase();
+            return roomA < roomB ? -1 : 1;
+          }).map((room, index) =>
             <div className="rooms" key={index}>
               <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
               <button onClick={(e) => this.submit(e, room, index)}>Delete Room</button>
