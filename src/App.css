@@ -43,7 +43,7 @@
   display: table;
 }
 
-#rooms > div > p:hover, .rooms button:hover {
+#rooms > div > p:hover, .rooms button:hover, #delete:hover {
   display: table;
   cursor: pointer;
   font-weight: bold;
@@ -101,12 +101,17 @@ span {
 #delete {
   font-style: italic;
   float: right;
+  margin-top: 5px;
 }
 
 #delete:hover {
   cursor: pointer;
 }
 
-#message {
+#message-container {
   margin-bottom: 40px;
+}
+
+#line {
+  margin-top: 35px;
 }

@@ -87,16 +87,18 @@ class MessageList extends Component {
               <div key={index}>
                 {
                   this.props.activeRoom.includes(message.roomId) ?
-                  <div id="message">
+                  <div id="message-container">
                     <p>
                       <span>Username: {message.username}</span>
                       <br></br>
                       <span>Sent At: {message.sentAt}</span>
                       <br></br>
+                      <div id="message">
                       Message: <br></br>{message.content}
-                      <br></br>
+                      </div>
                       <span id="delete">delete msg</span>
                     </p>
+                    <hr id="line"></hr>
                   </div> : ""
                 }
               </div>
