@@ -128,7 +128,7 @@ class MessageList extends Component {
                       <br></br>
                       <span id="message">{message.content}</span>
                       <br></br>
-                      <span id="delete" onClick={(e) => this.submit(e, message, index)}>delete msg</span>
+                      <span id="delete" onClick={(e) => this.submit(e, message, index)}>Delete Message</span>
                     </p>
                     <hr id="line"></hr>
                   </div> : ""

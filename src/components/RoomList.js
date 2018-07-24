@@ -71,7 +71,7 @@ class RoomList extends Component {
           this.state.rooms.map((room, index) =>
             <div className="rooms" key={index}>
               <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
-              <button onClick={(e) => this.submit(e, room, index)}>delete room</button>
+              <button onClick={(e) => this.submit(e, room, index)}>Delete Room</button>
             </div>
           )
         }
