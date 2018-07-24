@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class MessageList extends Component {
   constructor(props) {
@@ -82,6 +84,27 @@ class MessageList extends Component {
     this.setState({ messages: this.state.messages });
   }
 
+  submit = (e, message, index) => {
+    confirmAlert({
+      title: "Confirm to Submit",
+      message: `Are you sure you want to delete this message?`,
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            this.deleteMessage(e, message, index);
+          }
+        },
+        {
+          label: "No",
+          onClick: () => {
+            return false;
+          }
+        }
+      ]
+    })
+  }
+
   render() {
     return (
       <section>
@@ -105,7 +128,7 @@ class MessageList extends Component {
                       <br></br>
                       <span id="message">{message.content}</span>
                       <br></br>
-                      <span id="delete" onClick={(e) => this.deleteMessage(e, message, index)}>delete msg</span>
+                      <span id="delete" onClick={(e) => this.submit(e, message, index)}>delete msg</span>
                     </p>
                     <hr id="line"></hr>
                   </div> : ""
