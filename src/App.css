@@ -129,7 +129,7 @@ button:hover, submit-btn:hover {
 }
 
 #metadata, #message-body span:first-child {
-  font-size: 5px;
+  font-size: 12px;
 }
 
 #message-body div {
