@@ -23,7 +23,7 @@
   margin-top: 60px;
   font-size: 40px;
 }
-#title, #rooms, #btn-div, #user {
+#title, #rooms, #btn-div, #user, #left-section-aside > small {
   margin-left: 40px;
 }
 
@@ -33,6 +33,10 @@
 
 #room-label, #room-input, #submit-btn {
   margin-top: 10px;
+}
+
+#rooms {
+  margin-top: 25px;
 }
 
 #rooms > p {
