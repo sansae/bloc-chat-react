@@ -36,7 +36,7 @@ $ npm test spec/integration/<name-of-spec-test>
 ```
 
 ```
-$ npm test spec/integration/<name-of-spec-test>
+$ npm test spec/unit/<name-of-spec-test>
 ```
 
 ## Built With
