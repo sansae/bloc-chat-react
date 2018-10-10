@@ -67,24 +67,30 @@ class RoomList extends Component {
     return(
       <section id="rooms">
         <p>Select A Room</p>
-        {
-          this.state.rooms.sort((a, b) => {
-            var roomA = a.name.toUpperCase();
-            var roomB = b.name.toUpperCase();
-            return roomA < roomB ? -1 : 1;
-          }).map((room, index) =>
-            <div className="rooms" key={index}>
-              <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
-              <button onClick={(e) => this.submit(e, room, index)}>Delete Room</button>
-            </div>
-          )
-        }
+        <div id="rooms-container">
+          {
+            this.state.rooms.sort((a, b) => {
+              var roomA = a.name.toUpperCase();
+              var roomB = b.name.toUpperCase();
+              return roomA < roomB ? -1 : 1;
+            }).map((room, index) =>
+              <div className="rooms" key={index}>
+                <p onClick={(e) => this.props.handleClick(e)}>{room.name}</p>
+                <button onClick={(e) => this.submit(e, room, index)}>Delete Room</button>
+              </div>
+            )
+          }
+        </div>
 
         <div>
           <form onSubmit={(e) => this.createRoom(e)} id="room-form">
-            <label id="room-label" htmlFor="create-room">**Create New Room**</label>
-            <input id="room-input" type="text" name="create-room" ref="room-input" placeholder="Enter Room Name" value={this.state.name} onChange={(e) => this.handleChange(e)}></input>
-            <button id="submit-btn" type="submit" form="room-form">Submit</button>
+            <div>
+              <label id="room-label" htmlFor="create-room">Create New Room</label>
+            </div>
+            <div>
+              <input id="room-input" type="text" name="create-room" ref="room-input" placeholder="Enter Room Name" value={this.state.name} onChange={(e) => this.handleChange(e)}></input>
+              <button id="submit-btn" type="submit" form="room-form">Submit</button>
+            </div>
           </form>
         </div>
       </section>

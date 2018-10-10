@@ -39,7 +39,7 @@
   margin-top: 25px;
 }
 
-#rooms > p {
+#rooms > p, #room-label {
   text-decoration: underline;
 }
 
@@ -47,7 +47,7 @@
   display: table;
 }
 
-#rooms > div > p:hover {
+.rooms > p:hover {
   display: table;
   cursor: pointer;
   font-weight: bold;
@@ -146,34 +146,31 @@ button:hover, submit-btn:hover {
     flex-direction: column;
   }
 
+  .rooms {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
   .rooms button {
-    margin-left: 10px;
+    display: block;
   }
 
   #rooms {
-    margin-bottom: -30px;
+    margin-bottom: 30px;
   }
 
   #room-form {
     display: flex;
+    flex-direction: column;
     margin-top: 25px;
   }
 
-  #user {
-    margin-bottom: 40px;
-  }
-}
-
-@media only screen and (max-width: 539px) {
-  #room-form {
-    flex-direction: column;
+  #room-form div:first-child {
+    margin-top: 40px;
   }
 
   #room-label {
-    text-align: center;
-  }
-
-  ::-webkit-input-placeholder {
-    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
 }
