@@ -173,4 +173,9 @@ button:hover, submit-btn:hover {
     margin-top: 40px;
     margin-bottom: 30px;
   }
+
+  #user {
+    margin-bottom: 60px;
+    margin-top: 0px;
+  }
 }
