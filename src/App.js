@@ -37,7 +37,7 @@ class App extends Component {
       <section className="section-content">
         <aside id="left-section-aside">
           <h1 id="title">Welcome to Message Bored!</h1>
-          <small class="text-muted">Not a typo... just a play on words ;) Are ya bored? Come join me and let's exchange messages about life!</small>
+          <small className="text-muted">Not a typo... just a play on words ;) Are ya bored? Come join me and let's exchange messages about life!</small>
           <RoomList firebase={firebase} activeRoom={this.state.activeRoom} handleClick={(e) => this.selectRoom(e)}/>
           <User firebase={firebase} setUser={(user) => this.setUser(user)} username={this.state.username}/>
         </aside>

@@ -139,3 +139,41 @@ button:hover, submit-btn:hover {
 #message-body div {
   margin-top: 10px;
 }
+
+@media only screen and (max-width: 767px) {
+  .section-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rooms button {
+    margin-left: 10px;
+  }
+
+  #rooms {
+    margin-bottom: -30px;
+  }
+
+  #room-form {
+    display: flex;
+    margin-top: 25px;
+  }
+
+  #user {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  #room-form {
+    flex-direction: column;
+  }
+
+  #room-label {
+    text-align: center;
+  }
+
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+}
