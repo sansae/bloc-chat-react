@@ -54,6 +54,11 @@ class RoomList extends Component {
                 onClose()
             }}>Yes</button>
             <button className="no-btn" onClick={onClose}>No</button>
+            <button id="yes-btn" onClick={() => {
+                this.deleteRoom(e, room, index);
+                onClose()
+            }}>Yes</button>
+            <button id="no-btn" onClick={onClose}>No</button>
           </div>
         )
       }
