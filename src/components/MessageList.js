@@ -86,22 +86,19 @@ class MessageList extends Component {
 
   submit = (e, message, index) => {
     confirmAlert({
-      title: "Confirm to Submit",
-      message: `Are you sure you want to delete this message?`,
-      buttons: [
-        {
-          label: "Yes",
-          onClick: () => {
-            this.deleteMessage(e, message, index);
-          }
-        },
-        {
-          label: "No",
-          onClick: () => {
-            return false;
-          }
-        }
-      ]
+      customUI: ({ onClose }) => {
+        return (
+          <div className='custom-alert'>
+            <h1>Confirm to Submit</h1>
+            <p>Are you sure you want to delete this message?</p>
+            <button className="yes-btn" onClick={() => {
+                this.deleteMessage(e, message, index);
+                onClose()
+            }}>Yes</button>
+            <button className="no-btn" onClick={onClose}>No</button>
+          </div>
+        )
+      }
     })
   }
 
