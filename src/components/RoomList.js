@@ -44,22 +44,19 @@ class RoomList extends Component {
 
   submit = (e, room, index) => {
     confirmAlert({
-      title: "Confirm to Submit",
-      message: `Are you sure you want to delete ${room.name}?`,
-      buttons: [
-        {
-          label: "Yes",
-          onClick: () => {
-            this.deleteRoom(e, room, index);
-          }
-        },
-        {
-          label: "No",
-          onClick: () => {
-            return false;
-          }
-        }
-      ]
+      customUI: ({ onClose }) => {
+        return (
+          <div className='custom-alert'>
+            <h1>Confirm to Submit</h1>
+            <p>Are you sure you want to delete {room.name}?</p>
+            <button id="yes-btn" onClick={() => {
+                this.deleteRoom(e, room, index);
+                onClose()
+            }}>Yes</button>
+            <button id="no-btn" onClick={onClose}>No</button>
+          </div>
+        )
+      }
     })
   }
 
