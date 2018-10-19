@@ -24,9 +24,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.timerID = setInterval(() => {
       http.get("https://message-bored.herokuapp.com/");
     }, 300000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
   }
 
   setUser = (user) => {
