@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
+const http = require("http");
 
 var config = {
   apiKey: "AIzaSyAhVm_e7KVUH6GBJvn896D34glVvSJriWc",
@@ -20,6 +21,12 @@ class App extends Component {
     super(props);
 
     this.state = { activeRoom: "", username: "" };
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      http.get("https://message-bored.herokuapp.com/");
+    }, 300000);
   }
 
   setUser = (user) => {
