@@ -23,15 +23,15 @@ class App extends Component {
     this.state = { activeRoom: "", username: "" };
   }
 
-  componentDidMount() {
-    this.timerID = setInterval(() => {
-      http.get("https://message-bored.herokuapp.com/");
-    }, 300000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
+  // componentDidMount() {
+  //   this.timerID = setInterval(() => {
+  //     http.get("https://message-bored.herokuapp.com/");
+  //   }, 300000);
+  // }
+  //
+  // componentWillUnmount() {
+  //   clearInterval(this.timerID);
+  // }
 
   setUser = (user) => {
     if (user !== null) {
